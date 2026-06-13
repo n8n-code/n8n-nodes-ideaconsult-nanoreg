@@ -6,32 +6,32 @@ import { studiesDescription } from './resources/studies';
 import { facetsDescription } from './resources/facets';
 
 export class IdeaconsultNanoreg implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Ideaconsult Nanoreg',
-		name: 'N8nDevIdeaconsultNanoreg',
-		icon: { light: 'file:./ideaconsult-nanoreg.svg', dark: 'file:./ideaconsult-nanoreg.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'REST API for eNanoMapper nanomaterial data with free-text and faceted search.',
-		defaults: { name: 'Ideaconsult Nanoreg' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevIdeaconsultNanoregApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Ideaconsult Nanoreg',
+                name: 'N8nDevIdeaconsultNanoreg',
+                icon: { light: 'file:./ideaconsult-nanoreg.svg', dark: 'file:./ideaconsult-nanoreg.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'REST API for eNanoMapper nanomaterial data with free-text and faceted search.',
+                defaults: { name: 'Ideaconsult Nanoreg' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevIdeaconsultNanoregApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -71,6 +71,6 @@ export class IdeaconsultNanoreg implements INodeType {
 		...substancesDescription,
 		...studiesDescription,
 		...facetsDescription
-		],
-	};
+                ],
+        };
 }
